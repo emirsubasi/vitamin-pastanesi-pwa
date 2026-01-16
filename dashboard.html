@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#ff8c00">
+  <link rel="manifest" href="manifest.json">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="orange">
+  <meta name="apple-mobile-web-app-title" content="Vitamin">
+  
+  <title>Dashboard - Vitamin Pastanesi</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-warning">
+  <div class="container">
+    <a class="navbar-brand" href="index.html"><strong>Vitamin Pastanesi</strong></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link active" href="dashboard.html">Dashboard</a></li>
+        <li class="nav-item"><a class="nav-link" href="index.html">Personel</a></li>
+        <li class="nav-item"><a class="nav-link" href="tasks.html">Görevler</a></li>
+        <li class="nav-item"><a class="nav-link" href="leave.html">İzin</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="container mt-5">
+  <h2>Dashboard</h2>
+  
+  <!-- İSTATİSTİKLER -->
+  <div class="row mb-5">
+    <div class="col-md-3 mb-3">
+      <div class="card text-center p-4 bg-primary text-white">
+        <h3 id="totalEmp">0</h3>
+        <p>Toplam Çalışan</p>
+      </div>
+    </div>
+    <div class="col-md-3 mb-3">
+      <div class="card text-center p-4 bg-success text-white">
+        <h3 id="activeEmp">0</h3>
+        <p>Aktif</p>
+      </div>
+    </div>
+    <div class="col-md-3 mb-3">
+      <div class="card text-center p-4 bg-warning text-white">
+        <h3 id="onLeaveEmp">0</h3>
+        <p>İzinli</p>
+      </div>
+    </div>
+    <div class="col-md-3 mb-3">
+      <div class="card text-center p-4 bg-danger text-white">
+        <h3 id="firedEmp">0</h3>
+        <p>Kovuldu</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- GRAFİKLER -->
+  <div class="row">
+    <div class="col-md-6 mb-4">
+      <div class="card p-4">
+        <h5>Durum Dağılımı</h5>
+        <canvas id="statusChart"></canvas>
+      </div>
+    </div>
+    <div class="col-md-6 mb-4">
+      <div class="card p-4">
+        <h5>Rol Dağılımı</h5>
+        <canvas id="roleChart"></canvas>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="js/api.js"></script>
+<script src="js/dashboard.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
